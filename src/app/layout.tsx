@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { ToastProvider } from "@/providers/toast-provider";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -29,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <header className="p-[30px] bg-cyan-400"></header>
-        {children}
+        <ToastProvider>{children}</ToastProvider>
       </body>
     </html>
   );
